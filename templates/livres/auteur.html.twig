@@ -1,0 +1,18 @@
+ {% extends 'base.html.twig' %} 
+
+{% block title %}
+  livre par auteur
+{% endblock %}
+
+{% block body %}
+<h1  class=" text-aligne text-center"> livre par auteur </h1>
+
+    {{ form_start(form) }}
+<div class ="forme ">    
+    {{ form_widget(form) }}
+
+       <button type="submit" class="btn btn-primary  mt-4">{{ ' Aficher' }}</button>  
+</div>
+    {{ form_end(form) }}
+ 
+{% endblock %}

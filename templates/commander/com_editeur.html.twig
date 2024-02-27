@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}   
+    {% block title %}
+      commande par editeur
+    {% endblock %}
+  {% block body %}
+<h1  class=" text-aligne text-center"> commande par editeur </h1>
+
+    {{ form_start(form) }}
+<div class ="forme">
+    {{ form_widget(form) }}
+
+     <button class="btn btn-primary  mt-4">{{ 'Afficher' }}</button>
+   </div>
+    {{ form_end(form) }}
+
+{% endblock %}

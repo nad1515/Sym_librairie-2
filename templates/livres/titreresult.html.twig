@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}LIVRES{% endblock %}
+
+{% block body %}
+
+
+
+    <h1>Liste des livres</h1>
+
+    <table class='table table-bordered'>
+	<tr>
+		<th>ISBN</th>
+		<th>Titre</th>
+		<th>Theme</th>
+		<th>Nbr_pages</th>
+		<th>Format</th>
+		<th>Nom_auteur</th>
+		<th>Prenom_auteur</th>
+		<th>Editeur</th>
+		<th>Annee_edition</th>
+		<th>Prix_vente</th>
+		<th>Langue_livre</th>
+	</tr>
+
+    {% for livre in livres %}
+    
+   	<tr>
+		<td >{{livre.getIsbn()}}</td>
+		<td >{{livre.getTitreLivre()}}</td>
+		<td >{{livre.getThemeLivre()}}</td>
+		<td >{{livre.getNbrpagesLivre()}}</td>
+		<td >{{livre.getFormatLivre()}}</td>
+		<td >{{livre.getNomauteur()}}</td>
+		<td >{{livre.getPrenomauteur()}}</td>
+		<td >{{livre.getEditeur()}}</td>
+		<td >{{livre.getAnneeedition()}}</td>
+		<td >{{livre.getPrixVente()}}</td>
+		<td >{{livre.getLangueLivre()}}</td>
+	
+    </tr>
+
+    {% endfor %}
+
+{% endblock %}

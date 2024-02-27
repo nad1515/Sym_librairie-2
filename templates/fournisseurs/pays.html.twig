@@ -1,0 +1,15 @@
+
+ {% extends 'base.html.twig' %}   
+    {% block title %}
+        fournisseur par pays
+    {% endblock %}
+  {% block  body %} 
+        {{ form_start(form) }}
+    <h1  class=" text-aligne text-center">fournisseur par pays </h1>
+<div class ="forme ">
+    {{ form_widget(form) }} 
+
+       <button type="submit"  name="save_button" class="btn btn-primary  mt-4">{{ 'Afficher' }}</button>  
+</div>
+    {{ form_end(form) }}
+   {% endblock %} 

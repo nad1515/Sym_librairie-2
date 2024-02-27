@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Livres!{% endblock %}
+
+{% block body %}
+ 
+ 
+{# <div class= " container    "> #}
+  <h1 class=" text-aligne text-center"> Liste des livres </h1>
+    {% if is_granted('ROLE_ADMIN') %}
+     <a href= "{{path('livres_add') }}" > <button class="btn btn-primary mx-2 mb-2">{{ ' Ajouter livre' }}</button></a>
+    {% endif %}  
+  <table class="table table-striped" >
+  <thead>
+    <tr>
+    <th>ISBN </th> 
+    <th>Titre_livre </th>
+    <th> Theme_livre</th>
+    <th>Nbr_pages_livre</th>
+    <th>Format_livre</th>
+    <th>Nom_auteur</th>
+    <th>Prenom_auteur</th>
+    <th>Editeur</th>
+    <th>Annee_edition</th>
+    <th>Prix_vente</th>
+    <th>Langue_livre</th>
+    {% if is_granted('ROLE_ADMIN') %}
+     <th>Actions</th>
+    {% endif %}
+   </tr>
+  </thead>
+    {% for livre in livres %}
+    <tr>
+    <td > {{livre.getISBN() }} </td> 
+    <td > {{livre.getTitrelivre()}} </td>
+    <td > {{livre.getThemelivre()}} </td>
+     <td > {{livre.getNbrpageslivre()}} </td>
+     <td > {{livre.getFormatlivre()}} </td>
+     <td > {{livre.getNomauteur()}} </td>
+     <td > {{livre.getPrenomauteur()}} </td>
+     <td > {{livre.getEditeur()}} </td>
+     <td > {{livre.getAnneeedition()}} </td>
+     <td > {{livre.getPrixvente()}} </td>
+     <td > {{livre.getLanguelivre()}} </td>
+       {% if is_granted('ROLE_ADMIN') %}
+     <td >
+      <div class="d-flex flex-row">
+        <a href= "{{path('livres_edit',{'id':livre.id}) }}" ><button type="update" class="btn btn-warning btn-sm me-3"><i class="bi bi-pencil-fill"></i></button></a>
+         <a href="{{ path('livres_delete', {'id': livre.id}) }}"onclick="return confirm('Etes-vous sûr de vouloir supprimer cet personne?')"  ><button type="submit" class="btn btn-danger btn-sm" 
+         onclick="return confirmation()"><i class="bi bi-trash-fill"></i></button></a> 
+          </div>
+      </td> 
+      {% endif %}
+  </tr> 
+ {% endfor %}
+</table>   
+{# </div> #}
+{% endblock %}

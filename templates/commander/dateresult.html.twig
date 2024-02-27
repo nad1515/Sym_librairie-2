@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}FOURNISSEURS{% endblock %}
+
+{% block body %}
+    <h1>Liste commandes par date d'achat</h1>
+
+    <table class='table table-bordered '>
+        <tr>
+            
+        <th>Date_achat</th>
+        <th>Prix_achat</th>
+        <th>Nbr_exemplaires</th>
+        <th>Code_fournisseur</th>
+        <th>Raison_sociale</th>
+        <th>Pays</th>
+        <th>Titre_livre</th>
+        <th>Theme_livre</th>
+        <th>Nom_auteur</th>
+        <th>Prenom_auteur</th>
+        <th>Editeur</th>
+         <th>idUtilisateur</th>   
+     
+         
+        
+        </tr>
+        {% for commande in commandes %} 
+       <tr>
+        <td > {{commande.getDateAchat()|date('Y-m-d') }} </td>  
+        <td > {{commande.getPrixAchat() }} </td> 
+        <td > {{commande.getNbrExemplaires() }} </td> 
+         <td > {{commande.getIdLivre().getTitreLivre() }} </td> 
+         <td > {{commande.getIdLivre().getThemelivre() }} </td> 
+         <td > {{commande.getIdLivre().getNomauteur() }} </td> 
+         <td > {{commande.getIdLivre().getPrenomauteur() }} </td> 
+         <td > {{commande.getIdLivre().Editeur() }} </td> 
+         <td > {{commande.getIdfournisseur().getCodefournisseur() }} </td> 
+         <td > {{commande.getIdfournisseur().getRaisonsociale() }} </td> 
+         <td > {{commande.getIdfournisseur().getPays() }} </td>  
+         
+           <td > {{commande.getIdUtilisateur().getPrenom()}} </td>    
+    
+            
+                
+        </tr>
+    {% endfor %}
+  </table>   
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+ Edit livre 
+{% endblock %}
+
+{% block body %}
+<h1  class=" text-aligne text-center"> Edit livre </h1>
+
+    {{ form_start(form) }}
+<div class ="forme ">
+    {{ form_widget(form) }}
+
+     <button class="btn btn-primary  mt-4">{{ ' Mettre a jours' }}</button>
+   </div>
+    {{ form_end(form) }}
+
+{% endblock %}

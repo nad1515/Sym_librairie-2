@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+{% block body %}
+      <form class="connect" action="{{ path('app_login') }}" method="post">
+{% if error %}
+<div class="forme">{{
+error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+{% if app.user %}
+<div class="mb-3">
+You are logged in as {{ app.user.userIdentifier }}, <a
+href="{{ path('app_logout') }}">Se déconnecter</a>
+</div>
+{% endif %}
+  
+<h1 class="">Veuillez vous connecter</h1>
+<label class="" for="username">Email</label>
+<input class="" type="email" value="{{ last_username }}" name="_username"
+id="username" class="form" autocomplete="email" required autofocus>
+<label for="password">Mot de Passe</label>
+<input type="password" name="_password" id="password" class="form" autocomplete="current-password" required>
+<input type="hidden" name="_target_path"
+value="/home/"
+>
+<button class="btn  btn-primary" type="submit">
+Se connecter
+</button>
+</form>
+{% endblock %}

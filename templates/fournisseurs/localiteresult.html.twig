@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}FOURNISSEURS{% endblock %}
+
+{% block body %}
+    <h1>Liste des fournisseurs par Localite</h1>
+
+    <table class='table table-bordered'>
+        <tr>
+            <th>Codefournisseur </th> 
+            <th>Raison_sociale</th>
+            <th> Rue_fournisseur</th>
+            <th>Code_postal</th>
+            <th>Localite</th>
+            <th>Pays</th>
+            <th>Tel_fournisseur</th>
+            <th>Url_fournisseur</th>
+            <th>Email_fournisseur</th>
+            <th>Fax_fournisseur</th>
+         
+        
+        </tr>
+       {% for fournisseur in fournisseurs %}
+       <tr>
+            <td> {{fournisseur.getCodefournisseur() }} </td> 
+            <td> {{fournisseur.getRaisonsociale()}} </td>
+            <td> {{fournisseur.getRuefournisseur()}} </td>
+            <td> {{fournisseur.getCodepostal()}} </td>
+            <td> {{fournisseur.getLocalite()}} </td>
+            <td> {{fournisseur.getPays()}} </td>
+            <td> {{fournisseur.getTelfournisseur()}} </td>
+            <td> {{fournisseur.getUrlfournisseur()}} </td>
+            <td> {{fournisseur.getEmailfournisseur()}} </td>
+            <td> {{fournisseur.getFaxfournisseur()}} </td>
+            
+                
+        </tr>
+    {% endfor %}
+  </table>   
+
+{% endblock %}
