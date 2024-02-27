@@ -46,16 +46,22 @@
             <li class="nav-item dropdown"><a class="dropdown-item" href="/commander/editeur">par_editeur</a></li>
             </ul> 
           </div>  
-           
+           {# boutton reserver pour l'admin uniquement #}
             {% if is_granted('ROLE_ADMIN') %}
             <a href="/user/add" class="btn btn-info m-2 p-2">ajouter un utilisateur</a>
-           {% endif %}
-           <a href="/login" class="btn btn-primary m-2 p-2">connesction</a>
-           {# {% if app.user %}
-          {# Si un utilisateur est connecté, affichez le bouton de déconnexion #}
-           {# <a href="{{ path('logout') }}">Se déconnecter</a>  #}
-          {# {% endif %}  #} 
-      
+            {% endif %}
+           
+       {# si utilisateur connecté on affiche bouton déconnexion et nom utilisateur #}
+         {% if app.user %}
+            <div class="bule">
+             {{ app.user.userIdentifier }}
+            </div>
+            <a class="btn btn-danger m-2 p-2" type="submit" href="/logout"> Déconnexion </a>
+
+         {# sinon si l'utilisateur n'est pas connecter on affiche le bouton de connexion #}
+         {% else %}
+            <a class="btn btn-primary m-2 p-2" type="submit" href="/login">connexion </a>
+         {% endif %}
       </dive>  
  </nav>
 

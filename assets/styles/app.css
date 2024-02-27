@@ -16,12 +16,13 @@ header .navbar{
 
 }
 header  nav div a:hover{
-    background-color: rgba(197, 70, 70, 0.8);
-    padding: 1rem;
+    background-color: rgba(252, 147, 147, 0.8);
+    padding: 3px;
+    border-radius: 10px;
 }
 header  nav div ul li a:hover{
     background-color: rgba(70, 78, 197, 0.8) !important;
-    padding: 1rem;
+    padding: 2px;
 }
 main{
     width: 100%;
@@ -59,6 +60,7 @@ link{
 }
 
 h1{
+    font-family:cursive;
     background-color: rgba(127, 255, 212, 0.564);
 }
 form div label {
@@ -162,6 +164,16 @@ footer {
     margin-top: auto;
     padding: 2rem;
     color: white;
-    background-color: rgba(231, 186, 186, 0.712);
+    background-color: rgba(247, 171, 171, 0.905);
    
+}
+.bule {
+    display: inline-block;
+    padding: 8px 8px;
+    border-radius: 50px;
+    background-color: rgba(231, 186, 186, 0.816);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow:  8px 8px  rgba(220, 238, 146, 0.644);
 }
